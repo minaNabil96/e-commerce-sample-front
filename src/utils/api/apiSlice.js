@@ -21,25 +21,25 @@ export const apiSlice = createApi({
   // highlight-end
   baseQuery: fetchBaseQuery({
     baseUrl: `${baseUrl}`,
-    prepareHeaders: (headers, { getState }) => {
-      headers.set(
-        "Access-Control-Allow-Origin",
-        "https://laconic-e-commerce-sample-api.cyclic.app/"
-      );
-      headers.set(
-        "Access-Control-Allow-Origin",
-        "https://laconic-e-commerce-sample-api.cyclic.app"
-      );
-      headers.set(
-        "access-control-allow-origin",
-        "https://laconic-e-commerce-sample-api.cyclic.app/"
-      );
-      headers.set(
-        "access-control-allow-origin",
-        "https://laconic-e-commerce-sample-api.cyclic.app"
-      );
-      return headers;
-    },
+    // prepareHeaders: (headers, { getState }) => {
+    //   headers.set(
+    //     "Access-Control-Allow-Origin",
+    //     "https://laconic-e-commerce-sample-api.cyclic.app/"
+    //   );
+    //   headers.set(
+    //     "Access-Control-Allow-Origin",
+    //     "https://laconic-e-commerce-sample-api.cyclic.app"
+    //   );
+    //   headers.set(
+    //     "access-control-allow-origin",
+    //     "https://laconic-e-commerce-sample-api.cyclic.app/"
+    //   );
+    //   headers.set(
+    //     "access-control-allow-origin",
+    //     "https://laconic-e-commerce-sample-api.cyclic.app"
+    //   );
+    //   return headers;
+    // },
   }),
   endpoints: (builder) => ({
     // ...endpoints
