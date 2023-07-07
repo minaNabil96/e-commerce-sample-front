@@ -22,7 +22,22 @@ export const apiSlice = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: `${baseUrl}`,
     prepareHeaders: (headers, { getState }) => {
-      headers.set("Access-Control-Allow-Origin", "*");
+      headers.set(
+        "Access-Control-Allow-Origin",
+        "https://wicked-puce-sockeye.cyclic.app/"
+      );
+      headers.set(
+        "Access-Control-Allow-Origin",
+        "https://wicked-puce-sockeye.cyclic.app"
+      );
+      headers.set(
+        "access-control-allow-origin",
+        "https://wicked-puce-sockeye.cyclic.app/"
+      );
+      headers.set(
+        "access-control-allow-origin",
+        "https://wicked-puce-sockeye.cyclic.app"
+      );
       return headers;
     },
   }),
