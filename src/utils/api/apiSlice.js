@@ -24,19 +24,19 @@ export const apiSlice = createApi({
     prepareHeaders: (headers, { getState }) => {
       headers.set(
         "Access-Control-Allow-Origin",
-        "https://wicked-puce-sockeye.cyclic.app/"
+        "https://laconic-e-commerce-sample-api.cyclic.app/"
       );
       headers.set(
         "Access-Control-Allow-Origin",
-        "https://wicked-puce-sockeye.cyclic.app"
+        "https://laconic-e-commerce-sample-api.cyclic.app"
       );
       headers.set(
         "access-control-allow-origin",
-        "https://wicked-puce-sockeye.cyclic.app/"
+        "https://laconic-e-commerce-sample-api.cyclic.app/"
       );
       headers.set(
         "access-control-allow-origin",
-        "https://wicked-puce-sockeye.cyclic.app"
+        "https://laconic-e-commerce-sample-api.cyclic.app"
       );
       return headers;
     },
