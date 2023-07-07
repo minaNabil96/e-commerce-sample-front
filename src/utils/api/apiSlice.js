@@ -39,7 +39,7 @@ export const apiSlice = createApi({
       query: ({ username, password }) => ({
         url: `/users/login`,
         method: "POST",
-        credentials: "include",
+        credentials: "same-site",
         body: {
           username,
           password,
@@ -52,7 +52,7 @@ export const apiSlice = createApi({
       query: () => ({
         url: `/users/logout`,
         method: "POST",
-        credentials: "include",
+        credentials: "same-site",
       }),
       invalidatesTags: ["Login"],
     }),
@@ -60,7 +60,7 @@ export const apiSlice = createApi({
       query: (signUpObj) => ({
         url: `/users/signup`,
         method: "POST",
-        credentials: "include",
+        credentials: "same-site",
         body: signUpObj,
       }),
       invalidatesTags: ["Login"],
@@ -69,7 +69,7 @@ export const apiSlice = createApi({
       query: (confirmObj) => ({
         url: `/users/signup/confirmation`,
         method: "POST",
-        credentials: "include",
+        credentials: "same-site",
         body: confirmObj,
       }),
       invalidatesTags: ["Login"],
@@ -78,7 +78,7 @@ export const apiSlice = createApi({
       query: (forgotObj) => ({
         url: `/users/reset-password`,
         method: "POST",
-        credentials: "include",
+        credentials: "same-site",
         body: forgotObj,
       }),
       invalidatesTags: ["Login"],
@@ -87,7 +87,7 @@ export const apiSlice = createApi({
       query: (passObj) => ({
         url: `/users/edit-password`,
         method: "POST",
-        credentials: "include",
+        credentials: "same-site",
         body: passObj,
       }),
       invalidatesTags: ["Login"],
@@ -97,7 +97,7 @@ export const apiSlice = createApi({
       query: (id) => ({
         url: `/users/${id}`,
         method: "POST",
-        credentials: "include",
+        credentials: "same-site",
       }),
 
       providesTags: ["User"],
@@ -106,7 +106,7 @@ export const apiSlice = createApi({
       query: (favoriteObj) => ({
         url: `/users/add-favorites/${favoriteObj.id}`,
         method: "POST",
-        credentials: "include",
+        credentials: "same-site",
         body: favoriteObj,
       }),
       invalidatesTags: ["User"],
@@ -115,7 +115,7 @@ export const apiSlice = createApi({
       query: (favoriteObj) => ({
         url: `/users/delete-favorites/${favoriteObj.id}`,
         method: "PUT",
-        credentials: "include",
+        credentials: "same-site",
         body: favoriteObj,
       }),
       invalidatesTags: ["User"],
@@ -130,7 +130,7 @@ export const apiSlice = createApi({
       query: (categoryObj) => ({
         url: `/admins/create-category`,
         method: "POST",
-        credentials: "include",
+        credentials: "same-site",
 
         body: categoryObj,
       }),
@@ -140,7 +140,7 @@ export const apiSlice = createApi({
       query: (id) => ({
         url: `/admins/hide-category/${id}`,
         method: "PUT",
-        credentials: "include",
+        credentials: "same-site",
       }),
       invalidatesTags: ["Categories"],
     }),
@@ -148,7 +148,7 @@ export const apiSlice = createApi({
       query: ({ id, editCatobj }) => ({
         url: `/admins/edit-category/${id}`,
         method: "PUT",
-        credentials: "include",
+        credentials: "same-site",
         body: editCatobj,
       }),
       invalidatesTags: ["Categories"],
@@ -163,7 +163,7 @@ export const apiSlice = createApi({
       query: (categoryId) => ({
         url: `/subcategories/by-category`,
         method: "POST",
-        credentials: "include",
+        credentials: "same-site",
         body: { categoryId: categoryId },
       }),
       providesTags: ["SubCategoriesByCategory"],
@@ -172,7 +172,7 @@ export const apiSlice = createApi({
       query: (subCategoryObj) => ({
         url: `/admins/create-subcategory`,
         method: "POST",
-        credentials: "include",
+        credentials: "same-site",
         body: subCategoryObj,
       }),
       invalidatesTags: ["SubCategories", "SubCategoriesByCategory"],
@@ -181,7 +181,7 @@ export const apiSlice = createApi({
       query: (id) => ({
         url: `/admins/hide-subcategory/${id}`,
         method: "PUT",
-        credentials: "include",
+        credentials: "same-site",
       }),
       invalidatesTags: ["SubCategories", "SubCategoriesByCategory"],
     }),
@@ -189,7 +189,7 @@ export const apiSlice = createApi({
       query: ({ id, editSubObj }) => ({
         url: `/admins/edit-subcategory/${id}`,
         method: "PUT",
-        credentials: "include",
+        credentials: "same-site",
         body: editSubObj,
       }),
       invalidatesTags: ["SubCategories", "SubCategoriesByCategory"],
@@ -206,7 +206,7 @@ export const apiSlice = createApi({
       query: ({ page, limit, sort, term }) => ({
         url: `/products?sort=${sort}&limit=${limit}&page=${page}&term=${term}`,
         method: "GET",
-        credentials: "include",
+        credentials: "same-site",
       }),
       invalidatesTags: ["Products"],
     }),
@@ -214,7 +214,7 @@ export const apiSlice = createApi({
       query: ({ subCategoryId, limit, page, sort, term }) => ({
         url: `/products/bysubcategory/${subCategoryId}?limit=${limit}&page=${page}&sort=${sort}&term=${term}`,
         method: "GET",
-        credentials: "include",
+        credentials: "same-site",
       }),
       invalidatesTags: ["Products", "SubCategories", "SubCategoriesByCategory"],
     }),
@@ -222,7 +222,7 @@ export const apiSlice = createApi({
       query: ({ brandId, limit, page, sort, term }) => ({
         url: `/products/bybrand/${brandId}?limit=${limit}&page=${page}&sort=${sort}&term=${term}`,
         method: "GET",
-        credentials: "include",
+        credentials: "same-site",
       }),
       providesTags: ["productsByBrand"],
     }),
@@ -234,7 +234,7 @@ export const apiSlice = createApi({
       query: (productObj) => ({
         url: `/admins/create-product`,
         method: "POST",
-        credentials: "include",
+        credentials: "same-site",
         body: productObj,
       }),
       invalidatesTags: ["Products"],
@@ -244,7 +244,7 @@ export const apiSlice = createApi({
       query: (id) => ({
         url: `/admins/hide-product/${id}`,
         method: "PUT",
-        credentials: "include",
+        credentials: "same-site",
       }),
       invalidatesTags: ["Products"],
     }),
@@ -252,7 +252,7 @@ export const apiSlice = createApi({
       query: (userRateWithComment) => ({
         url: `/comments/addrateandcomment`,
         method: "POST",
-        credentials: "include",
+        credentials: "same-site",
         body: userRateWithComment,
       }),
       invalidatesTags: ["Comments", "Products"],
@@ -261,7 +261,7 @@ export const apiSlice = createApi({
       query: (productObj) => ({
         url: `/comments/getratingsandcomment/${productObj.productId}?page=${productObj.page}&limit=3`,
         method: "POST",
-        credentials: "include",
+        credentials: "same-site",
       }),
       providesTags: ["Comments", "Products"],
     }),
@@ -276,7 +276,7 @@ export const apiSlice = createApi({
       query: (brandObj) => ({
         url: `/admins/create-brand`,
         method: "POST",
-        credentials: "include",
+        credentials: "same-site",
         body: brandObj,
       }),
       invalidatesTags: ["Brands"],
@@ -285,7 +285,7 @@ export const apiSlice = createApi({
       query: (id) => ({
         url: `/admins/hide-brand/${id}`,
         method: "PUT",
-        credentials: "include",
+        credentials: "same-site",
       }),
       invalidatesTags: ["Brands"],
     }),
@@ -293,7 +293,7 @@ export const apiSlice = createApi({
       query: ({ id, editBrandObj }) => ({
         url: `/admins/edit-brand/${id}`,
         method: "PUT",
-        credentials: "include",
+        credentials: "same-site",
         body: editBrandObj,
       }),
       invalidatesTags: ["Brands"],
@@ -311,7 +311,7 @@ export const apiSlice = createApi({
       query: (offerObj) => ({
         url: `/admins/create-offer`,
         method: "POST",
-        credentials: "include",
+        credentials: "same-site",
         body: offerObj,
       }),
       invalidatesTags: ["Offers"],
