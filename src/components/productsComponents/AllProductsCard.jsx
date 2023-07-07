@@ -27,7 +27,7 @@ const AllProductsCard = ({
         className={`my-5 mx-auto flex flex-col  `}
         key={_id}
       >
-        <Link to={`/products/${name}`} state={_id}>
+        <Link to={`/products/${_id}`} state={_id}>
           <CardActionArea sx={{ height: cardHeight }}>
             <CardMedia
               className={` `}
