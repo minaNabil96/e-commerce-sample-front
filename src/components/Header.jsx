@@ -9,6 +9,7 @@ import { BsCart } from "react-icons/bs";
 import { Link, NavLink } from "react-router-dom";
 import { Badge, IconButton } from "@mui/material";
 import { useUserLogoutMutation } from "../utils/api/apiSlice";
+import Button from "@mui/material/Button";
 //
 
 function classNames(...classes) {
@@ -109,6 +110,20 @@ const Header = () => {
                         {item.name}
                       </NavLink>
                     ))}
+                    <Link to={`/signup`}>
+                      <Button
+                        sx={{
+                          backgroundColor: "limegreen",
+                          ":hover": { backgroundColor: "green" },
+                          marginX: "0.50rem",
+                          paddingX: "0.50rem",
+                        }}
+                        className={`duration-150 `}
+                        variant={`contained`}
+                      >
+                        signup
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -236,6 +251,20 @@ const Header = () => {
                   {item.name}
                 </NavLink>
               ))}
+              <Link to={`/signup`}>
+                <Button
+                  sx={{
+                    backgroundColor: "limegreen",
+                    ":hover": { backgroundColor: "green" },
+                    marginY: "0.75rem",
+                    paddingX: "0.50rem",
+                  }}
+                  className={`duration-150 `}
+                  variant={`contained`}
+                >
+                  signup
+                </Button>
+              </Link>
             </div>
           </Disclosure.Panel>
         </>

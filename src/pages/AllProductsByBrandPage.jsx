@@ -38,7 +38,6 @@ const AllProductsByBrandPage = () => {
     dispatch(subNavSearch(""));
   }, [dispatch]);
 
-  console.log(productsWithBrand);
   return (
     <Box className={`min-h-screen  `}>
       {isLoading ? (
@@ -58,7 +57,7 @@ const AllProductsByBrandPage = () => {
         </LoadingsAndErrors>
       ) : (
         <>
-          <Box className={`  grid sm:grid-cols-4 my-8`}>
+          <Box className={`  grid sm:grid-cols-3 lg:grid-cols-4 my-8`}>
             <AllProductsCard
               cardHeight={cardState.cardHight}
               imageHeight={cardState.imageHeight}

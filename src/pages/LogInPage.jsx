@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Container from "@mui/material/Container";
 import { Box, Typography, TextField, Button } from "@mui/material";
 import {
@@ -220,21 +221,40 @@ function LogInPage() {
               label="Password"
               // color={`secondary`}
             />
-            <Button
-              sx={{
-                marginTop: "0.50rem",
-                // paddingBottom: "0.25rem",
+            <Box className={`flex items-center justify-center space-x-4`}>
+              <Button
+                sx={{
+                  marginTop: "0.50rem",
+                  // paddingBottom: "0.25rem",
 
-                backgroundColor: " aquamarine",
-                ":hover": { backgroundColor: "cyan" },
-                color: "black",
-              }}
-              variant="contained"
-              // color={"success"}
-              onClick={() => setForgotPasswordStatus(true)}
-            >
-              <p className={`py-1`}>forgot password ?</p>
-            </Button>
+                  backgroundColor: " aquamarine",
+                  ":hover": { backgroundColor: "cyan" },
+                  color: "black",
+                  paddingX: "0.50rem",
+                }}
+                variant="contained"
+                // color={"success"}
+                onClick={() => setForgotPasswordStatus(true)}
+              >
+                <p className={`py-1`}>forgot password ?</p>
+              </Button>
+              <Link to={`/signup`}>
+                <Button
+                  sx={{
+                    marginTop: "0.50rem",
+                    // paddingBottom: "0.25rem",
+
+                    backgroundColor: " aquamarine",
+                    ":hover": { backgroundColor: "cyan" },
+                    color: "black",
+                    paddingX: "0.50rem",
+                  }}
+                  variant="contained"
+                >
+                  <p className={`py-1`}>new user ?</p>
+                </Button>
+              </Link>
+            </Box>
             <Button
               sx={{
                 marginTop: "0.50rem",

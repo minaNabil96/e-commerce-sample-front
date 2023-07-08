@@ -93,11 +93,13 @@ const UserFavorites = ({ userData, loading, error }) => {
 			<Typography sx={{ fontSize: "19px" }}>المفضلة فارغة</Typography>
 		</Box>
 	) : (
-		<Box className={` min-h-full flex items-center justify-center  `}>
+		<Box
+			className={` min-h-full flex items-center justify-center border border-green-400 rounded-sm mx-[1px] `}
+		>
 			{/* start from md screen */}
 
 			<Box
-				className={` max-h-[400px] w-full  m-10 bg-green-50 rounded-md shadow-sm shadow-green-50 overflow-auto`}
+				className={` max-h-[400px] w-full  m-5 bg-green-50 rounded-md shadow-sm shadow-green-50 overflow-auto`}
 			>
 				<Typography
 					component={`div`}
