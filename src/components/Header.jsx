@@ -110,7 +110,10 @@ const Header = () => {
                         {item.name}
                       </NavLink>
                     ))}
-                    <Link to={`/signup`}>
+                    <Link
+                      to={`/signup`}
+                      className={`${loggedIn === "true" ? "hidden" : ""}`}
+                    >
                       <Button
                         sx={{
                           backgroundColor: "limegreen",
@@ -118,7 +121,9 @@ const Header = () => {
                           marginX: "0.50rem",
                           paddingX: "0.50rem",
                         }}
-                        className={`duration-150 `}
+                        className={`duration-150 ${
+                          loggedIn === "true" ? "hidden" : ""
+                        }`}
                         variant={`contained`}
                       >
                         signup
@@ -251,7 +256,10 @@ const Header = () => {
                   {item.name}
                 </NavLink>
               ))}
-              <Link to={`/signup`}>
+              <Link
+                to={`/signup`}
+                className={`${loggedIn === "true" ? "hidden" : ""}`}
+              >
                 <Button
                   sx={{
                     backgroundColor: "limegreen",
@@ -259,7 +267,9 @@ const Header = () => {
                     marginY: "0.75rem",
                     paddingX: "0.50rem",
                   }}
-                  className={`duration-150 `}
+                  className={`duration-150 ${
+                    loggedIn === "true" ? "hidden" : ""
+                  } `}
                   variant={`contained`}
                 >
                   signup
