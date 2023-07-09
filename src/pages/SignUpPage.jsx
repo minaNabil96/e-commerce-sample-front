@@ -413,7 +413,7 @@ const SignUpPage = () => {
               sx={{ fontSize: "14px", marginX: "3px" }}
               variant="standard"
             >
-              offerImage *
+              profileImage *
             </InputLabel>
 
             <Box
@@ -426,7 +426,7 @@ const SignUpPage = () => {
               >
                 <Button
                   variant="contained"
-                  id="offerImage"
+                  id="profileImage"
                   component="div"
                   className=""
                   onChange={(e) => selectImageHandler(e)}
