@@ -1,5 +1,5 @@
 import React, { useState, useLayoutEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Box } from "@mui/system";
 import Typography from "@mui/material/Typography";
 import LoadingsAndErrors from "../LoadingsAndErrors";
@@ -13,6 +13,7 @@ const ProductsBySubCategory = ({ subCategoryId }) => {
   const [selected, setSelected] = useState(1);
   const dispatch = useDispatch();
   const { state } = useLocation();
+  const navigate = useNavigate();
   const { sorted, termForSearch } = useSelector((state) => state.subNavSlice);
   const {
     isLoading,
@@ -36,7 +37,10 @@ const ProductsBySubCategory = ({ subCategoryId }) => {
   };
   useLayoutEffect(() => {
     dispatch(subNavSearch(""));
-  }, [dispatch]);
+    if (!state) {
+      navigate(`/categories-and-subcategories`);
+    }
+  }, [dispatch, navigate, state]);
   return (
     <Box className={`min-h-screen  `}>
       {isLoading ? (
