@@ -2,7 +2,10 @@ import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
-import { modalStatus } from "../../utils/reducers/headlessModalSlice";
+import {
+  modalStatus,
+  closeModal,
+} from "../../utils/reducers/headlessModalSlice";
 import { Typography } from "@mui/material";
 function HeadlessModal() {
   const [isOpen, setIsOpen] = useState(true);
@@ -14,13 +17,16 @@ function HeadlessModal() {
     headlessModalMessage,
     headlessModalPayload,
     headlessModalHeadName,
-    closeModal,
+    closeModal: closemodal,
   } = useSelector((state) => state.headlessModalSlice);
   // end rtk
 
   const closeHandler = () => {
     if (headlessModalStatus) {
       dispatch(modalStatus());
+      setTimeout(() => {
+        dispatch(closeModal());
+      }, 300);
     }
   };
 
@@ -40,7 +46,11 @@ function HeadlessModal() {
         </button>
       </div> */}
 
-      <Transition appear show={headlessModalStatus} as={Fragment}>
+      <Transition
+        appear
+        show={headlessModalStatus && headlessModalMessage ? true : false}
+        as={Fragment}
+      >
         <Dialog
           as="div"
           className="relative z-[9999]"
@@ -91,15 +101,15 @@ function HeadlessModal() {
                     </Typography>
                   </div>
 
-                  {/* <div className="mt-4"> */}
-                  {/*   <button */}
-                  {/*     type="button" */}
-                  {/*     className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2" */}
-                  {/*     // onClick={closeHandler} */}
-                  {/*   > */}
-                  {/*     ok */}
-                  {/*   </button> */}
-                  {/* </div> */}
+                  <div className="mt-4">
+                    <button
+                      type="button"
+                      className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                      onClick={closeHandler}
+                    >
+                      ok
+                    </button>
+                  </div>
                 </Dialog.Panel>
               </Transition.Child>
             </div>

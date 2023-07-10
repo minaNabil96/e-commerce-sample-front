@@ -162,7 +162,7 @@ const SignUpPage = () => {
             if (res.status === "congratulation") {
               modalOpen(
                 "signup",
-                `congratulation, we have sent you an e-mail with confirmation link.`
+                `congratulation, you will receive an e-mail with a confirmation link.`
               );
               modalClose(6000);
             } else {

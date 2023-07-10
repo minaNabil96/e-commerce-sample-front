@@ -14,18 +14,21 @@ const useModalHandler = (time) => {
     dispatch(modalMessage(`${message}`));
   };
   const modalClose = () => {
-    setTimeout(
-      () => {
-        dispatch(modalStatus());
-      },
-      time ? time : 2500
-    );
-    setTimeout(
-      () => {
-        dispatch(closeModal());
-      },
-      time ? time + 1000 : 3500
-    );
+    // setTimeout(
+    //   () => {
+    //     dispatch(modalStatus());
+    //   },
+    //   time ? time : 2500
+    // );
+    // setTimeout(
+    //   () => {
+    //     dispatch(closeModal());
+    //   },
+    //   time ? time + 1000 : 3500
+    // );
+    setTimeout(() => {
+      dispatch(modalStatus());
+    }, 2500);
   };
   return { modalOpen, modalClose };
 };
