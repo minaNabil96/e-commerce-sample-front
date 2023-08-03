@@ -271,8 +271,7 @@ const routes = createBrowserRouter([
   },
 ]);
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
+const root = ReactDOM.createRoot(document.getElementById("root")).render(
   // <React.StrictMode>
 
   <Provider store={store}>

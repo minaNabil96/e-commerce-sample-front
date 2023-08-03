@@ -126,7 +126,7 @@ const Header = () => {
                         }`}
                         variant={`contained`}
                       >
-                        signup
+                        التسجيل
                       </Button>
                     </Link>
                   </div>
@@ -272,7 +272,7 @@ const Header = () => {
                   } `}
                   variant={`contained`}
                 >
-                  signup
+                  التسجيل
                 </Button>
               </Link>
             </div>
