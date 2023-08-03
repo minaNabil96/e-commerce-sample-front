@@ -23,7 +23,7 @@ const Footer = () => {
   ];
 
   const linksMap = links.map(({ name, icon, link }) => (
-    <li key={name}>
+    <li key={name} className={`border border-slate-200 rounded-md `} >
       <Link
         className={` text-[30px] ${
           name === "facebook"
@@ -31,7 +31,7 @@ const Footer = () => {
             : name === "linkedin"
             ? "text-blue-500"
             : "text-blue-400"
-        } `}
+        }  `}
         to={link}
       >
         {icon}
@@ -59,7 +59,7 @@ const Footer = () => {
               {linksMap}
             </ul>
             <Box
-              className={`flex items-center flex-row-reverse content-center gap-4  my-1`}
+              className={`flex items-center flex-row-reverse content-center   my-1`}
             >
               <Typography color="white" variant="subtitle1">
                 {`${new Date().getFullYear()}`}
@@ -70,12 +70,28 @@ const Footer = () => {
                   to={`https://mina-nabil-portfolio.vercel.app/`}
                   relative={`path`}
                 >
-                  <span className={`text-yellow-500 text-center px-2`}>
+                  <span className={`text-yellow-500 text-center px-2 text-[18px]`}>
                     Mina Nabil
                   </span>
                 </Link>
               </h2>
             </Box>
+            <Link to={`https://mina-nabil-portfolio.vercel.app/`}
+                  relative={`path`}>
+                <Button
+                  sx={{
+                    backgroundColor: "slateblue",
+                    ":hover": { backgroundColor: "teal" },
+                    margin: "0.50rem",
+                    padding: "0.50rem",
+                    fontSize:'12px'
+                  }}
+                  className={`duration-150 `}
+                  variant={`contained`}
+                >
+                portfolio
+                </Button>
+              </Link>
           </Box>
           <Box className={`flex flex-col items-center justify-center my-4 `}>
             <Typography
