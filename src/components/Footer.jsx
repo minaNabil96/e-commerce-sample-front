@@ -23,7 +23,7 @@ const Footer = () => {
   ];
 
   const linksMap = links.map(({ name, icon, link }) => (
-    <li key={name} className={`border border-slate-200 rounded-md `} >
+    <li key={name} className={`border border-slate-200 rounded-md `}>
       <Link
         className={` text-[30px] ${
           name === "facebook"
@@ -67,31 +67,35 @@ const Footer = () => {
               <h2 className={`text-white text-center `}>
                 Created By:
                 <Link
-                  to={`https://mina-nabil-portfolio.vercel.app/`}
+                  to={`https://minanabil96.github.io/my-portfolio/`}
                   relative={`path`}
                 >
-                  <span className={`text-yellow-500 text-center px-2 text-[18px]`}>
+                  <span
+                    className={`text-yellow-500 text-center px-2 text-[18px]`}
+                  >
                     Mina Nabil
                   </span>
                 </Link>
               </h2>
             </Box>
-            <Link to={`https://mina-nabil-portfolio.vercel.app/`}
-                  relative={`path`}>
-                <Button
-                  sx={{
-                    backgroundColor: "slateblue",
-                    ":hover": { backgroundColor: "teal" },
-                    margin: "0.50rem",
-                    padding: "0.50rem",
-                    fontSize:'12px'
-                  }}
-                  className={`duration-150 `}
-                  variant={`contained`}
-                >
+            <Link
+              to={`https://minanabil96.github.io/my-portfolio/`}
+              relative={`path`}
+            >
+              <Button
+                sx={{
+                  backgroundColor: "slateblue",
+                  ":hover": { backgroundColor: "teal" },
+                  margin: "0.50rem",
+                  padding: "0.50rem",
+                  fontSize: "12px",
+                }}
+                className={`duration-150 `}
+                variant={`contained`}
+              >
                 portfolio
-                </Button>
-              </Link>
+              </Button>
+            </Link>
           </Box>
           <Box className={`flex flex-col items-center justify-center my-4 `}>
             <Typography

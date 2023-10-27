@@ -143,7 +143,7 @@ const AddProduct = () => {
   });
   const dispatch = useDispatch();
   const { materialModalHeadName, materialModalPayload } = useSelector(
-    (state) => state.materialModalSlice
+    (state) => state.materialModalSlice,
   );
   const { modalOpen, modalClose } = useModalHandler();
   const [
@@ -156,7 +156,7 @@ const AddProduct = () => {
   });
   const { data: allBrands } = useGetAllBrandsQuery({ page: 1, limit: 16 });
   const { data: allSubCategories } = useGetSubCategoriesByCategoryQuery(
-    selectedCategory._id
+    selectedCategory._id,
   );
   const { data: allOffers } = useGetOffersQuery({ page: 1 });
   const errorStatus = useCallback(
@@ -173,7 +173,7 @@ const AddProduct = () => {
       setErrorState({ ...errorState, requiredTextFileds: error });
       setTextFieldsValues({ ...textFieldsValues, [nameInid]: value });
     },
-    [errorState, textFieldsValues]
+    [errorState, textFieldsValues],
   );
   const requiredTextFileds = useMemo(
     () =>
@@ -192,7 +192,7 @@ const AddProduct = () => {
         />
       )),
 
-    [errorState, errorStatus]
+    [errorState, errorStatus],
   );
 
   const requiredSelectFileds = useMemo(
@@ -226,7 +226,7 @@ const AddProduct = () => {
         </FormControl>
       )),
 
-    [errorState, errorStatus, allCategories, selectedCategory._id]
+    [errorState, errorStatus, allCategories, selectedCategory._id],
   );
 
   const unrequiredTextFields = useMemo(
@@ -244,7 +244,7 @@ const AddProduct = () => {
         />
       )),
 
-    [errorState, errorStatus]
+    [errorState, errorStatus],
   );
 
   const unrequiredSelectFileds = useMemo(
@@ -343,7 +343,7 @@ const AddProduct = () => {
       selectedBrand._id,
       selectedSubCategory._id,
       selectedOffer._id,
-    ]
+    ],
   );
 
   const selectImageHandler = useCallback(
@@ -369,10 +369,10 @@ const AddProduct = () => {
       } else if (nameInid === "upload2") {
         const filesForUpload = e.target.files;
         const convertToArray = Object.keys(filesForUpload).map(
-          (key) => filesForUpload[key]
+          (key) => filesForUpload[key],
         );
         const selectedFile = convertToArray.map((img) =>
-          URL.createObjectURL(img)
+          URL.createObjectURL(img),
         );
         if (selectedFile) {
           setIsImageSelected({
@@ -390,7 +390,7 @@ const AddProduct = () => {
           });
       }
     },
-    [isImageSelected]
+    [isImageSelected],
   );
   const uploadFileds = useMemo(
     () =>
@@ -496,7 +496,7 @@ const AddProduct = () => {
         }
       }),
 
-    [errorState, isImageSelected, selectImageHandler]
+    [errorState, isImageSelected, selectImageHandler],
   );
 
   const handleMultiFiledsModal = useCallback(
@@ -506,7 +506,7 @@ const AddProduct = () => {
       dispatch(modalHeadName(name));
       dispatch(modalStatus());
     },
-    [dispatch]
+    [dispatch],
   );
 
   const handleMultiFiledsEntries = (e) => {
@@ -632,7 +632,7 @@ const AddProduct = () => {
       materialModalHeadName,
       productDetails,
       productVersions,
-    ]
+    ],
   );
   // end error handler
   const handleAddProduct = async (e) => {
@@ -668,11 +668,11 @@ const AddProduct = () => {
               const { imageUrl } = await imagesUploader(img);
 
               productObj.images.push(imageUrl);
-            })
+            }),
           );
 
           const { imageUrl } = await imagesUploader(
-            isImageSelected.imageForUpload
+            isImageSelected.imageForUpload,
           );
           productObj.coverImage = await imageUrl;
         }
@@ -686,7 +686,7 @@ const AddProduct = () => {
             ) {
               delete productObjCopy[fieldKey];
             }
-          }
+          },
         );
 
         if (productObjCopy.coverImage && productObjCopy.images) {
@@ -715,11 +715,11 @@ const AddProduct = () => {
             ) {
               delete productObjCopy[fieldKey];
             }
-          }
+          },
         );
 
         const { imageUrl } = await imagesUploader(
-          isImageSelected.imageForUpload
+          isImageSelected.imageForUpload,
         );
         setReadyCoverImage(imageUrl);
         addProduct(productObjCopy)
